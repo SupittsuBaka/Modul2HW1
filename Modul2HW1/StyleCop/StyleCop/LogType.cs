@@ -1,6 +1,6 @@
 ﻿namespace StyleCop
 {
-    internal enum LogType
+    public enum LogType
     {
         Info = 1,
         Warning,

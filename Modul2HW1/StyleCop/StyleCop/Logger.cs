@@ -4,7 +4,7 @@ using System.IO;
 
 namespace StyleCop
 {
-    internal class Logger
+    public class Logger
     {
         private static readonly Logger _instance = new Logger();
         private StringBuilder _logs;
@@ -20,10 +20,7 @@ namespace StyleCop
 
         public static Logger Instance
         {
-            get
-            {
-                return _instance;
-            }
+            get => _instance;
         }
 
         public void Write(LogType type, string message)
@@ -33,9 +30,9 @@ namespace StyleCop
             Console.WriteLine(log);
         }
 
-        public void ToFile()
+        public string ReturnLogs()
         {
-            File.WriteAllText("log.txt", _logs.ToString());
+            return _logs.ToString();
         }
     }
 }
